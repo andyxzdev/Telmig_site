@@ -12,6 +12,7 @@ const defaultBenefits = [
 function PlanCard({ speed, price, icon, label = `${speed} Mega`, symmetric = false, description = 'Download + Upload', benefits = defaultBenefits, featured = false, delay = 0 }) {
   const Icon = icon
   const reducedMotion = useReducedMotion()
+  const labelParts = label.match(/^(\d+)\s*(.*)$/)
 
   return (
     <Motion.article
@@ -28,14 +29,24 @@ function PlanCard({ speed, price, icon, label = `${speed} Mega`, symmetric = fal
       )}
 
       <Icon className="mb-3.5 size-8 text-title" strokeWidth={2} aria-hidden="true" />
-      <h3 className="text-lg font-bold text-white">{label}</h3>
+      <h3 className="text-lg font-bold text-white">
+        {labelParts ? (
+          <>
+            <span className="text-[clamp(42px,4.6vw,54px)] leading-none">{labelParts[1]}</span>
+            <span className="ml-1 text-base">{labelParts[2]}</span>
+          </>
+        ) : label}
+      </h3>
       <p className="mt-1 text-sm text-[#c0c9cc]">{symmetric ? 'Download e upload simétricos' : description}</p>
 
       <p className="mt-3.5 mb-4 flex items-baseline justify-center gap-1 whitespace-nowrap">
         {price ? (
           <>
             <span className="text-xs text-[#c0c9cc]">R$</span>
-            <span className="text-[34px] font-bold leading-tight tracking-[-1px] text-white">{price}</span>
+            <span className="text-[clamp(36px,3.8vw,44px)] font-bold leading-tight tracking-[-1px] text-white">
+              {price.split(',')[0]}
+              <span className="align-super text-[14px]">,{price.split(',')[1]}</span>
+            </span>
             <span className="text-xs text-[#c0c9cc]">/mês</span>
           </>
         ) : (
