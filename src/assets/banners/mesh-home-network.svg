@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" fill="none">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1600" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11181f"/>
+      <stop offset=".55" stop-color="#152733"/>
+      <stop offset="1" stop-color="#193d4a"/>
+    </linearGradient>
+    <linearGradient id="room" x1="680" y1="130" x2="1510" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#243944"/>
+      <stop offset="1" stop-color="#1b2c32"/>
+    </linearGradient>
+    <linearGradient id="router" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fff"/>
+      <stop offset="1" stop-color="#b8c9ce"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1600v700H0z"/>
+  <path d="m648 276 390-198 445 217v314H648V276Z" fill="url(#room)" stroke="#78929a" stroke-opacity=".42" stroke-width="4"/>
+  <path d="m648 276 390 198 445-179M1038 474v135M648 276v333M1483 295v314" stroke="#9eb2b7" stroke-opacity=".32" stroke-width="4"/>
+  <path d="m650 610 388-136 445 136" stroke="#9eb2b7" stroke-opacity=".25" stroke-width="4"/>
+  <path d="M760 348h196v155H760z" fill="#304751" stroke="#8ba2a8" stroke-opacity=".38" stroke-width="3"/>
+  <path d="M793 380h130v123H793z" fill="#263a42"/>
+  <path d="M1211 341h181v157h-181z" fill="#304751" stroke="#8ba2a8" stroke-opacity=".38" stroke-width="3"/>
+  <path d="M1243 372h117v126h-117z" fill="#243a43"/>
+  <path d="M850 610v-86h52v86m292 0v-77h62v77" stroke="#99adb1" stroke-opacity=".4" stroke-width="4"/>
+  <g filter="url(#glow)" stroke="#20c9f2" stroke-linecap="round" stroke-width="5" opacity=".85">
+    <path d="M943 259a126 126 0 0 1 158 0"/>
+    <path d="M970 289a85 85 0 0 1 105 0"/>
+    <path d="M991 316a52 52 0 0 1 63 0"/>
+    <path d="M1269 241a95 95 0 0 1 119 0"/>
+    <path d="M1292 265a65 65 0 0 1 74 0"/>
+    <path d="M1310 286a36 36 0 0 1 39 0"/>
+  </g>
+  <g>
+    <ellipse cx="1030" cy="443" rx="81" ry="18" fill="#081116" fill-opacity=".35"/>
+    <path d="M958 408c0-10 32-18 72-18s72 8 72 18v27c0 10-32 18-72 18s-72-8-72-18v-27Z" fill="url(#router)"/>
+    <ellipse cx="1030" cy="408" rx="72" ry="18" fill="#f7fbfc"/>
+    <circle cx="1030" cy="408" r="4" fill="#14bde7"/>
+  </g>
+  <g>
+    <ellipse cx="1334" cy="475" rx="67" ry="15" fill="#081116" fill-opacity=".35"/>
+    <path d="M1275 444c0-9 26-16 59-16s59 7 59 16v23c0 9-26 16-59 16s-59-7-59-16v-23Z" fill="url(#router)"/>
+    <ellipse cx="1334" cy="444" rx="59" ry="16" fill="#f7fbfc"/>
+    <circle cx="1334" cy="444" r="4" fill="#14bde7"/>
+  </g>
+  <path d="M0 0h830L550 700H0V0Z" fill="url(#background)"/>
+</svg>
