@@ -1,6 +1,5 @@
 import HomeSection from './sections/HomeSection.jsx'
 import PlansSection from './sections/PlansSection.jsx'
-import ConnectivitySection from './sections/ConnectivitySection.jsx'
 import CoverageSection from './sections/CoverageSection.jsx'
 import BenefitsSection from './sections/BenefitsSection.jsx'
 import AppsSection from './sections/AppsSection.jsx'
@@ -21,7 +20,6 @@ function Home() {
       <main>
         <HomeSection />
         <PlansSection />
-        <ConnectivitySection />
         <CoverageSection />
         <BenefitsSection />
         <AppsSection />

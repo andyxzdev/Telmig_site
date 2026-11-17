@@ -1,8 +1,8 @@
-import { Star, UserRound } from 'lucide-react'
+import { BadgeCheck, Star, UserRound } from 'lucide-react'
 import { FcGoogle } from 'react-icons/fc'
 import { motion as Motion, useReducedMotion } from 'framer-motion'
 
-function ReviewCard({ name, city, rating, comment, delay = 0 }) {
+function ReviewCard({ name, details, rating, time, comment, verified = false, delay = 0 }) {
   const reducedMotion = useReducedMotion()
 
   return (
@@ -19,7 +19,7 @@ function ReviewCard({ name, city, rating, comment, delay = 0 }) {
         </span>
         <div className="min-w-0 flex-1">
           <h3 className="text-sm leading-snug font-bold text-white">{name}</h3>
-          <p className="mt-1 text-xs text-white/60">{city}</p>
+          {details && <p className="mt-1 text-xs text-white/60">{details}</p>}
         </div>
         <FcGoogle className="size-6 shrink-0" aria-hidden="true" />
       </div>
@@ -32,11 +32,14 @@ function ReviewCard({ name, city, rating, comment, delay = 0 }) {
             aria-hidden="true"
           />
         ))}
+        {verified && <BadgeCheck className="ml-1 size-4 fill-[#4285f4] text-white" aria-label="Avaliação verificada" />}
       </div>
-      <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-white/85">
-        <p>{comment}</p>
-      </blockquote>
-      <p className="mt-5 border-t border-white/10 pt-3 text-[11px] text-white/50">Avaliação ilustrativa</p>
+      <p className="mt-1 text-xs text-white/60">{time}</p>
+      {comment && (
+        <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-white/85">
+          <p>{comment}</p>
+        </blockquote>
+      )}
     </Motion.article>
   )
 }

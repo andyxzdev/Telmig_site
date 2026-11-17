@@ -7,7 +7,7 @@ function ArticleSection({ post }) {
         <p className="mt-6 text-lg leading-relaxed text-white/70">{post.excerpt}</p>
       </header>
 
-      <img src={post.banner} alt={post.bannerAlt} className="mt-10 aspect-[16/8] w-full rounded-2xl object-cover object-center max-[600px]:aspect-[4/3]" fetchPriority="high" />
+      {post.banner && <img src={post.banner} alt={post.bannerAlt} className="mt-10 aspect-[16/8] w-full rounded-2xl object-cover object-center max-[600px]:aspect-[4/3]" fetchPriority="high" />}
 
       <div className="mx-auto mt-12 max-w-[800px] space-y-10">
         {post.sections.map((section, index) => (

@@ -43,8 +43,8 @@ export function getPageMetadata(pathname, posts) {
       ...base,
       title: `${post.title} | Blog Telmig`,
       description: post.excerpt,
-      image: new URL(post.banner, site.url).href,
-      imageAlt: post.bannerAlt,
+      image: post.banner ? new URL(post.banner, site.url).href : base.image,
+      imageAlt: post.bannerAlt || 'Telmig',
       type: 'article',
       post,
     }

@@ -7,9 +7,10 @@ const defaultBenefits = [
   'Wi-Fi de alta performance',
   'Instalação grátis*',
   'Clube de vantagens',
+  'Telmig livros',
 ]
 
-function PlanCard({ speed, price, icon, label = `${speed} Mega`, symmetric = false, description = 'Download + Upload', benefits = defaultBenefits, featured = false, delay = 0 }) {
+function PlanCard({ speed, price, icon, label = `${speed} Mega`, benefits = defaultBenefits, featured = false, delay = 0 }) {
   const Icon = icon
   const reducedMotion = useReducedMotion()
   const labelParts = label.match(/^(\d+)\s*(.*)$/)
@@ -37,8 +38,6 @@ function PlanCard({ speed, price, icon, label = `${speed} Mega`, symmetric = fal
           </>
         ) : label}
       </h3>
-      <p className="mt-1 text-sm text-[#c0c9cc]">{symmetric ? 'Download e upload simétricos' : description}</p>
-
       <p className="mt-3.5 mb-4 flex items-baseline justify-center gap-1 whitespace-nowrap">
         {price ? (
           <>
@@ -62,7 +61,7 @@ function PlanCard({ speed, price, icon, label = `${speed} Mega`, symmetric = fal
           </li>
         ))}
       </ul>
-      <p className="mt-2 text-[11px] text-[#aeb9bd]">*Consulte condições</p>
+      <p className="mt-1 text-[9px] text-[#aeb9bd]">*Consulte condições</p>
 
       <Button
         variant={featured ? 'primary' : 'outline'}

@@ -2,23 +2,23 @@ import { Crown, Router, Wifi, Zap } from 'lucide-react'
 import PlanCard from '../components/PlanCard.jsx'
 
 const plans = [
-  { speed: 600, price: '99,99', icon: Wifi, symmetric: true },
-  { speed: 800, price: '119,99', icon: Zap, symmetric: true },
-  { speed: 1000, price: '129,99', icon: Crown, symmetric: true, benefits: ['Wi-Fi 6', 'Download e upload simétricos', 'Clube de vantagens'] },
+  { speed: 600, price: '99,99', icon: Wifi, benefits: ['Wi-Fi de alta performance', 'Instalação grátis*', 'Clube de vantagens', 'Telmig livros'] },
+  { speed: 800, price: '119,99', icon: Zap, benefits: ['Wi-Fi de alta performance', 'Instalação grátis*', 'Clube de vantagens', 'Telmig livros'] },
+  { speed: 1000, label: '1 Giga', price: '129,99', icon: Crown, benefits: ['Wi-Fi 6 de alta performance', 'Instalação grátis*', 'Clube de Vantagens', 'Telmig livros'] },
   {
     speed: 2000,
-    label: '2 Gbps',
+    label: '2 Giga',
     price: null,
     icon: Router,
     featured: true,
-    description: 'Wi-Fi 7',
-    benefits: ['2 Gbps de download', 'Tecnologia Wi-Fi 7', 'Consulte disponibilidade'],
+    description: 'Wi-Fi 7 de alta performance',
+    benefits: ['Wi-Fi 7 de alta performance', 'Instalação grátis*', 'Clube de Vantagens', 'Telmig livros'],
   },
 ]
 
 function PlansSection() {
   return (
-    <section id="planos" className="relative z-10 -mt-px bg-background px-6 pt-[112px] pb-14" aria-labelledby="plans-title">
+    <section id="planos" className="relative z-10 -mt-px overflow-hidden bg-[radial-gradient(ellipse_at_50%_56%,rgba(9,191,241,0.13),transparent_68%),var(--color-background)] px-6 pt-[112px] pb-14" aria-labelledby="plans-title">
       <h2 id="plans-title" className="text-center text-[32px] leading-tight font-bold tracking-[-0.8px] text-white max-[600px]:text-[28px]">
         Escolha seu <span className="text-title">plano ideal</span>
       </h2>
